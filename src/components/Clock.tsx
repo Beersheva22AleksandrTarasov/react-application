@@ -6,23 +6,26 @@ type Props = {
 };
 const style: CSSProperties = {
     display: "flex",
-    flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    flexDirection: "column"
 };
-function getTimeZone(place: string): string | undefined {
+function getTimeZones(place: string): string | undefined {
     const timePlace =
-        timeZones.find(tz => JSON.stringify(tz).includes(place));
+        timeZones.find(timeZn => JSON.stringify(timeZn).includes(place));
     return timePlace?.name;
 }
-export const Clock: React.FC<Props> = ({place, time}) => {
-    const timeZone: string | undefined = getTimeZone(place);
-    const title: string = (timeZone && place) || "Israel";
+export const Clock: React.FC<Props> = ({ place, time }) => {
+
+    const timeZone: string | undefined = getTimeZones(place);
+
     const timeSt: string = time.toLocaleTimeString(undefined,
         { timeZone })
 
+    const nameOfPlace: string = (timeZone) || "Israel";
+
     return <div style={style}>
         <header>
-            {title}
+            {nameOfPlace}
         </header>
         <p>{timeSt}</p>
     </div>

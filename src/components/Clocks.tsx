@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Clock } from "./Clock";
 
 const Clocks: React.FC = () => {
@@ -14,7 +14,7 @@ const Clocks: React.FC = () => {
         };
     }, []);
 
-    const places = ["Istanbul", "Dubai", "New York", "Beijing"];
+    const places = ["Istanbul", "Dubai", "New York", "London"];
 
     return (
         <div
