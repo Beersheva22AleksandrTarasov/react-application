@@ -16,6 +16,8 @@ const Clocks: React.FC = () => {
 
     const places = ["Istanbul", "Dubai", "New York", "London"];
 
+
+
     return (
         <div
             style={{

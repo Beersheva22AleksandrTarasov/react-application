@@ -14,6 +14,7 @@ function getTimeZones(place: string): string | undefined {
         timeZones.find(timeZn => JSON.stringify(timeZn).includes(place));
     return timePlace?.name;
 }
+
 export const Clock: React.FC<Props> = ({ place, time }) => {
 
     const timeZone: string | undefined = getTimeZones(place);
